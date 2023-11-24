@@ -8,7 +8,7 @@
         <p>Soon on this page there will be all my infos and projects ;)</p>
     </div>
     <div>
-        <h1>DEV SITE</h1>
+        <h1>WORK IN PROGRESS</h1>
     </div>
 </main>
 
