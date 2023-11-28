@@ -1,0 +1,31 @@
+<script lang="ts">
+    import * as config from "$lib/config"
+  import Toggle from "./toggle.svelte";
+</script>
+
+<nav>
+    <a href="/test" class="title">
+        <b>{config.title}</b>
+    </a>
+
+    <Toggle />
+</nav>
+
+
+<style>
+    nav {
+        padding-block: var(--size-7);
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>

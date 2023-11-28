@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import '../app.css'
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -60,4 +60,6 @@
         color: hsl(220 10% 98%);
         background-color: hsl(220 10% 10%);
     }
-</style>
+</style> -->
+
+<slot />
