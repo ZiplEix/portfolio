@@ -18,7 +18,7 @@ published: true
 
 Media inside the **static** folder is servred from ``/``.
 
-![Svelte](favicon.png)
+![Svelte](/favicon.png)
 
 ## counter
 
