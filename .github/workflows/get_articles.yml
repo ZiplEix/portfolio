@@ -22,4 +22,5 @@ jobs:
                 git config --local user.name "GitHub Action"
                 git add src/posts/*
                 git commit -m "[ADD] new articles"
+                git remote set-url origin "https://$GITHUB_ACTOR:${{ secrets.GIT_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY"
                 git push
