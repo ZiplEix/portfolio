@@ -15,17 +15,10 @@ jobs:
 
             - name: execute downloas script
               run: |
-                chmod +x get_article.sh
-                ./get_article.sh
+                chmod +x script/get_article.sh
+                ./script/get_article.sh
 
             - name: commit new articles
               run: |
-                git config --local user.email "action@github.com"
-                git config --local user.name "GitHub Action"
-                if [ -n "$(git status --porcelain)" ]; then
-                    git add src/posts/*
-                    git commit -m "[ADD] new articles"
-                    git push
-                else
-                    echo "Aucune modification à commettre."
-                fi
+                chmod +x  script/push.sh
+                ./script/push.sh
