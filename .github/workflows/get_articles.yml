@@ -9,7 +9,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: verif code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
+              with:
+                token: ${{ secrets.GIT_ACCESS_TOKEN }}
 
             - name: execute downloas script
               run: |
@@ -22,5 +24,4 @@ jobs:
                 git config --local user.name "GitHub Action"
                 git add src/posts/*
                 git commit -m "[ADD] new articles"
-                git remote set-url origin "https://$GITHUB_ACTOR:${{ secrets.GIT_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY"
                 git push
