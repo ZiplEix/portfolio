@@ -1,0 +1,25 @@
+name: Get all articles
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    download-articles:
+        runs-on: ubuntu-latest
+        steps:
+            - name: verif code
+              uses: actions/checkout@v2
+
+            - name: execute downloas script
+              run: |
+                chmod +x get_article.sh
+                ./get_article.sh
+
+            - name: commit new articles
+              run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                git add src/posts/*
+                git commit -m "[ADD] new articles"
+                git push
