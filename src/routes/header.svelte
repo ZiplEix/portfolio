@@ -16,6 +16,8 @@
     nav {
         padding-block: var(--size-7);
         align-items: center;
+
+        border-bottom: 1px solid var(--border);
     }
 
     a {
