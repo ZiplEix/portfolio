@@ -8,6 +8,10 @@
     inject({ mode: dev ? 'development' : 'production' });
 </script>
 
+<svelte:head>
+	<title>Baptiste's portfolio</title>
+</svelte:head>
+
 <main>
     <Column>
         <h1>Welcome on Baptiste Leroyer's portfolio</h1>
