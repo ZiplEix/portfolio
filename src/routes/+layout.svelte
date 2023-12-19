@@ -1,23 +1,51 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import '../app.css'
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
 
+	import Header from './header.svelte';
+	import Footer from './footer.svelte';
+    import PageTransition from "./transition.svelte";
+
     inject({ mode: dev ? 'development' : 'production' });
+
+    export let data;
 </script>
 
 <svelte:head>
-	<title>Svelte GUI</title>
+	<title>Baptiste's portfolio</title>
 </svelte:head>
 
 <div class="container">
     <main>
-        <slot />
+        <Header />
+
+        <PageTransition url={data.url}>
+            <slot />
+        </PageTransition>
+
+        <Footer />
     </main>
 </div>
 
 <style>
-    .container {
+    @import 'open-props/style';
+    @import 'open-props/normalize';
+
+    main {
+        height: 100%;
+        max-inline-size: 1440px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        margin-inline: auto;
+        padding-inline: var(--size-7);
+
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+
+
+    /* .container {
         position: absolute;
         top: 0;
         left: 0;
@@ -46,20 +74,5 @@
         );
 
         padding: 3px;
-    }
-
-    main {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-
-        display: grid;
-        place-content: center;
-        margin: 0;
-        font-family: 'Manrope', sans-serif;
-        color: hsl(220 10% 98%);
-        background-color: hsl(220 10% 10%);
-    }
-</style> -->
-
-<slot />
+    } */
+</style>
