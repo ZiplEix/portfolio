@@ -1,7 +1,12 @@
 <script lang="ts">
-  import { formatDate } from '$lib/utils.js';
+    import { formatDate } from '$lib/utils.js';
+    import { Github } from "lucide-svelte";
 
     export let data;
+
+    function goToLink(link: string) {
+        window.open(link, "_blank");
+    }
 </script>
 
 <svelte:head>
@@ -11,9 +16,20 @@
 </svelte:head>
 
 <article>
-    <hgroup>
-        <h1>{data.meta.title}</h1>
-        <p>Published at {formatDate(data.meta.date)}</p>
+    <hgroup class="title">
+        <div>
+            <h1>{data.meta.title}</h1>
+            <p>Published at {formatDate(data.meta.date)}</p>
+        </div>
+        <div>
+            <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="repo-button">
+                {#if data.meta.url}
+                    <div>
+                        <Github />
+                    </div>
+                {/if}
+            </button>
+        </div>
     </hgroup>
 
     <div class="tags">
@@ -29,6 +45,12 @@
 </article>
 
 <style>
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     article {
         max-inline-size: var(--size-content-3);
         margin-inline: auto;
@@ -52,5 +74,20 @@
     .tags > * {
         padding: var(--size-2) var(--size-3);
         border-radius: var(--radius-round);
+    }
+
+    .repo-button {
+        padding: 0;
+        font-weight: inherit;
+        background: none;
+        border: none;
+        /* box-shadow: none; */
+        overflow: hidden;
+        padding: var(--size-1);
+    }
+
+    button >* {
+        display: flex;
+        gap: var(--size-2);
     }
 </style>
