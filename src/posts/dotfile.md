@@ -6,6 +6,7 @@ categories:
   - "dotfile"
   - "configuration"
 published: true
+url: https://github.com/ZiplEix/dotfile
 ---
 
 ## oué ca fonctionne 
