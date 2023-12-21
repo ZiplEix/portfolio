@@ -14,6 +14,9 @@
 
 <style>
     nav {
+        display: flex;
+        justify-content: space-between;
+
         padding-block: var(--size-7);
         align-items: center;
 
@@ -27,10 +30,10 @@
         font-size: var(--font-size-fluid-1);
     }
 
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
         nav {
             display: flex;
             justify-content: space-between;
         }
-    }
+    } */
 </style>

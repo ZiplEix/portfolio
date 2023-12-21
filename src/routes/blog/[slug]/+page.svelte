@@ -16,12 +16,9 @@
 </svelte:head>
 
 <article>
-    <hgroup class="title">
-        <div>
+    <hgroup>
+        <div class="title">
             <h1>{data.meta.title}</h1>
-            <p>Published at {formatDate(data.meta.date)}</p>
-        </div>
-        <div>
             <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="repo-button">
                 {#if data.meta.url}
                     <div>
@@ -30,6 +27,7 @@
                 {/if}
             </button>
         </div>
+        <p>Published at {formatDate(data.meta.date)}</p>
     </hgroup>
 
     <div class="tags">
