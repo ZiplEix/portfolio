@@ -1,6 +1,6 @@
 <script lang="ts">
     import { formatDate } from '$lib/utils.js';
-    import { Github } from "lucide-svelte";
+    import { Github, ArrowLeft } from "lucide-svelte";
 
     export let data;
 
@@ -17,8 +17,17 @@
 
 <article>
     <hgroup>
-        <div class="title">
-            <h1>{data.meta.title}</h1>
+        <div class="first-ligne-header">
+            <div class="title">
+                <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="go-back-button">
+                    {#if data.meta.url}
+                        <div>
+                            <ArrowLeft />
+                        </div>
+                    {/if}
+                </button>
+                <h1>{data.meta.title}</h1>
+            </div>
             <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="repo-button">
                 {#if data.meta.url}
                     <div>
@@ -43,6 +52,12 @@
 </article>
 
 <style>
+    .first-ligne-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .title {
         display: flex;
         justify-content: space-between;
@@ -74,14 +89,23 @@
         border-radius: var(--radius-round);
     }
 
+    .go-back-button {
+        padding: 0;
+        font-weight: inherit;
+        background: none;
+        border: none;
+        overflow: hidden;
+        padding: var(--size-1);
+        margin-right: 10px;
+    }
+
     .repo-button {
         padding: 0;
         font-weight: inherit;
         background: none;
         border: none;
-        /* box-shadow: none; */
         overflow: hidden;
-        padding: var(--size-1);
+        padding: var(--size-2);
     }
 
     button >* {
