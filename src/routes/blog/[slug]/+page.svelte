@@ -7,6 +7,10 @@
     function goToLink(link: string) {
         window.open(link, "_blank");
     }
+
+    function goBack() {
+        window.history.back();
+    }
 </script>
 
 <svelte:head>
@@ -19,22 +23,20 @@
     <hgroup>
         <div class="first-ligne-header">
             <div class="title">
-                <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="go-back-button">
-                    {#if data.meta.url}
+                <button on:click={() => goBack() } aria-label="Go back" class="go-back-button">
                         <div>
                             <ArrowLeft />
                         </div>
-                    {/if}
                 </button>
                 <h1>{data.meta.title}</h1>
             </div>
-            <button on:click={() => goToLink(data.meta.url)} aria-label="Toggle theme" class="repo-button">
-                {#if data.meta.url}
+            {#if data.meta.url}
+                <button on:click={() => goToLink(data.meta.url)} aria-label="Go to github repo" class="repo-button">
                     <div>
                         <Github />
                     </div>
-                {/if}
-            </button>
+                </button>
+            {/if}
         </div>
         <p>Published at {formatDate(data.meta.date)}</p>
     </hgroup>
