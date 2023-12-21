@@ -1,7 +1,7 @@
 ---
 title: Portfolio
 description: My portfolio website
-date: "21-12-2023"
+date: "01-01-2000"
 categories:
   - "portfolio"
   - "svelte"
