@@ -1,2 +1,2 @@
 https://raw.githubusercontent.com/ZiplEix/dotfile/main/dotfile.md dotfile
-https://raw.githubusercontent.com/ZiplEix/portfolio/main/portfolio.md?token=GHSAT0AAAAAACLWN2OYJZK2SRLIPFHCFR5EZMEEDIA portfolio
+https://raw.githubusercontent.com/ZiplEix/portfolio/main/portfolio.md portfolio
