@@ -48,6 +48,7 @@ En ce qui concerne les articles qui ne sont pas liés à un projet spécifique, 
 Pour l'interprétation du Markdown, j'ai choisi d'utiliser le package `mdsvex`, qui permet de convertir le Markdown en HTML. Cependant, j'ai rencontré un défi avec ce package : il ne permettait pas d'ajouter des classes aux balises HTML générées. Pour résoudre ce problème, j'ai trouvé une solution en utilisant d'abord le package `remark` pour transformer le Markdown en HTML, puis en employant `rehype` pour ajouter les classes nécessaires aux balises HTML, me permettant ainsi de personnaliser le style des articles du blog selon mes préférences.
 
 En ce qui concerne l'intégration des blocs de code dans les articles, j'ai opté pour le package `shiki`, qui offre la possibilité de coloriser le code en appliquant des thèmes inspirés de `VS Code`. Cette approche s'est avérée pratique et polyvalente, donnant un rendu visuel très convaincant, très proche de ce que l'on peut obtenir dans un environnement de développement intégré (IDE) :
+<br/>
 
 ```c
 #include <stdio.h>
@@ -73,6 +74,7 @@ Voici donc une liste des différents composant qu'il est possible d'utiliser dan
 
 Rendu :
 
+<br/>
 <Counter />
 
 Contenue du fichier markdown :
