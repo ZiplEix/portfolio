@@ -1,7 +1,7 @@
 ---
-title: second Post
-description: This is my second post.
-date: "27-11-2023"
+title: Second Post
+description: Un post pour tester l'intégration du code dans un article lors du developpement du site
+date: "01-01-1970"
 categories:
   - "sveltekit"
   - "svelte"

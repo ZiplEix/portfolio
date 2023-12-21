@@ -1,7 +1,7 @@
 ---
 title: First Post
-description: This is my first post.
-date: "26-11-2023"
+description: Un post pour tester l'intégration du code dans un article lors du developpement du site
+date: "01-01-1970"
 categories:
   - "sveltekit"
   - "svelte"
