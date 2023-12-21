@@ -12,14 +12,9 @@ while IFS= read -r line; do
   # Supprime les caractères non valides pour un nom de fichier
   title=$(echo "$title" | tr -cd '[:alnum:]')
 
-  # Vérifie si le fichier existe déjà
-  if [ ! -f "src/posts/$title.md" ]; then
-    # Télécharge le contenu de l'article en utilisant curl
-    curl -s "$link" > "src/posts/$title.md"
-    echo "Article '$title' téléchargé et enregistré dans src/posts/$title.md"
-  else
-    echo "Article '$title' existe déjà, pas de téléchargement nécessaire."
-  fi
+  # Télécharge le contenu de l'article en utilisant curl
+  curl -s "$link" > "src/posts/$title.md"
+  echo "Article '$title' téléchargé et enregistré dans src/posts/$title.md"
 done < articles.txt
 
 echo "Tous les articles ont été vérifiés et téléchargés si nécessaire, puis enregistrés dans le répertoire 'src/posts'."
