@@ -60,7 +60,7 @@ int main(void)
 }
 ```
 
-## Intégration de composent svelte en markdown
+## Intégration de composants svelte en markdown
 
 Lors de la génération de la page static, le contenu markdown est converti en HTML puis est intéprété par svelte en tant que composent. Ce qui permet d'intégré d'autre composant svelte dans le markdown très facilement. Il suffit de faire un import du composent dans le fichier markdown et de l'utiliser comme n'importe quel autre composent svelte. C'est contre intuitif au début mais ca fonctionne très. La seul limitatation est que le composant svelte doit être présent dans le projet pour pouvoir être utilisé.
 
