@@ -1,4 +1,4 @@
 https://raw.githubusercontent.com/ZiplEix/dotfile/main/dotfile.md dotfile
-https://raw.githubusercontent.com/ZiplEix/dotfile/main/dotfile.md dotfile_V2
+https://raw.githubusercontent.com/ZiplEix/dotfile/main/dotfileV2.md dotfile_V2
 https://raw.githubusercontent.com/ZiplEix/portfolio/main/portfolio.md portfolio
 https://raw.githubusercontent.com/ZiplEix/goly/main/goly.md goly
