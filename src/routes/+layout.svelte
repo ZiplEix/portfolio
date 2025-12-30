@@ -3,8 +3,9 @@
 	import ActivityBar from "$lib/components/ActivityBar.svelte";
 	import Sidebar from "$lib/components/Sidebar.svelte";
 	import StatusBar from "$lib/components/StatusBar.svelte";
-	import { onMount } from "svelte";
 	import { sidebarVisible } from "$lib/store";
+
+	import { onMount } from "svelte";
 
 	let { children } = $props();
 	let isSidebarVisible = $state(true);
@@ -13,7 +14,7 @@
 	sidebarVisible.subscribe((v) => (isSidebarVisible = v));
 
 	onMount(() => {
-		if (window.innerWidth < 1000) {
+		if (window.innerWidth < 768) {
 			sidebarVisible.set(false);
 		}
 	});
