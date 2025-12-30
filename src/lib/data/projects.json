@@ -1,0 +1,53 @@
+[
+    {
+        "id": "questhub",
+        "name": "questhub",
+        "description": "Svelte application",
+        "url": "https://github.com/ZiplEix/questhub",
+        "stars": 0,
+        "language": "Svelte",
+        "owner": "ZiplEix",
+        "repo": "questhub",
+        "readmePath": "frontend/README.md"
+    },
+    {
+        "id": "scrabble",
+        "name": "scrabble",
+        "description": "Svelte implementation of Scrabble",
+        "url": "https://github.com/ZiplEix/scrabble",
+        "stars": 0,
+        "language": "Svelte",
+        "owner": "ZiplEix",
+        "repo": "scrabble"
+    },
+    {
+        "id": "better-logs",
+        "name": "better-logs",
+        "description": "Go logging library",
+        "url": "https://github.com/ZiplEix/better-logs",
+        "stars": 2,
+        "language": "Go",
+        "owner": "ZiplEix",
+        "repo": "better-logs"
+    },
+    {
+        "id": "mail-toolchain",
+        "name": "mail-toolchain",
+        "description": "Mail processing toolchain",
+        "url": "https://github.com/ZiplEix/mail-toolchain",
+        "stars": 0,
+        "language": "Go",
+        "owner": "ZiplEix",
+        "repo": "mail-toolchain"
+    },
+    {
+        "id": "alpha-OS",
+        "name": "alpha-OS",
+        "description": "Alpha Operating System",
+        "url": "https://github.com/ZiplEix/alpha-OS",
+        "stars": 0,
+        "language": "C",
+        "owner": "ZiplEix",
+        "repo": "alpha-OS"
+    }
+]
