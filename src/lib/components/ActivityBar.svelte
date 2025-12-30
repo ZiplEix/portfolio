@@ -1,16 +1,30 @@
 <script lang="ts">
-    import { toggleSidebar } from "$lib/store";
+    import { toggleSidebar, activeActivity, sidebarVisible } from "$lib/store";
+
+    let currentActivity = $state("explorer");
+    activeActivity.subscribe((v) => (currentActivity = v));
+
+    function setActivity(activity: "explorer" | "search") {
+        if (currentActivity === activity && $sidebarVisible) {
+            toggleSidebar();
+        } else {
+            activeActivity.set(activity);
+            if (!$sidebarVisible) toggleSidebar();
+        }
+    }
 </script>
 
 <div
     class="w-12 h-full bg-vscode-activity flex flex-col items-center py-2 text-vscode-text select-none"
 >
     <div
-        class="p-3 border-l-2 border-vscode-text cursor-pointer"
-        onclick={toggleSidebar}
+        class="p-3 border-l-2 cursor-pointer {currentActivity === 'explorer'
+            ? 'border-vscode-text opacity-100'
+            : 'border-transparent opacity-50 hover:opacity-100'}"
+        onclick={() => setActivity("explorer")}
         role="button"
         tabindex="0"
-        onkeydown={(e) => e.key === "Enter" && toggleSidebar()}
+        onkeydown={(e) => e.key === "Enter" && setActivity("explorer")}
     >
         <!-- Files Icon -->
         <svg
@@ -28,7 +42,15 @@
             <polyline points="13 2 13 9 20 9"></polyline>
         </svg>
     </div>
-    <div class="p-3 opacity-50 cursor-pointer hover:opacity-100">
+    <div
+        class="p-3 border-l-2 cursor-pointer {currentActivity === 'search'
+            ? 'border-vscode-text opacity-100'
+            : 'border-transparent opacity-50 hover:opacity-100'}"
+        onclick={() => setActivity("search")}
+        role="button"
+        tabindex="0"
+        onkeydown={(e) => e.key === "Enter" && setActivity("search")}
+    >
         <!-- Search Icon -->
         <svg
             width="24"

@@ -123,6 +123,7 @@ export const files = writable(initialFiles);
 export const activeFileId = writable<string | null>('about');
 export const openFiles = writable<string[]>(['about']);
 export const sidebarVisible = writable(true);
+export const activeActivity = writable<'explorer' | 'search'>('explorer');
 
 export function toggleSidebar() {
     sidebarVisible.update(v => !v);
