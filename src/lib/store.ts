@@ -29,12 +29,63 @@ const initialFiles: Record<string, File> = {
         type: 'file',
         parentId: 'root',
         content: `
-# About Me
+<div align="center">
+  <img src="https://avatars.githubusercontent.com/u/86067803" width="150" style="border-radius: 50%" />
+  <h1>Baptiste Leroyer</h1>
+  <h3>
+    5th-year Student at EPITECH <br/>
+    C & Go Developer | Low-Level & Kernel Enthusiast
+  </h3>
+  <br/>
+  <a href="https://www.linkedin.com/in/baptiste-leroyer/" target="_blank">LinkedIn</a> | <a href="https://github.com/ZiplEix" target="_blank">GitHub</a>
+</div>
 
-Hi, I'm Baptiste.
+<h2>👨‍💻 About Me</h2>
 
-I am a developer passionate about open source, data visualization, and creative coding.
-        `
+<p>Passionate developer currently in my final year at <strong>EPITECH</strong>. I have a strong interest in <strong>low-level programming</strong>, <strong>operating systems</strong>, and <strong>kernel development</strong>. I enjoy building robust software and exploring how things work under the hood.</p>
+
+<h2>🎓 Education</h2>
+
+<p><strong>EPITECH</strong> (2021 - 2026)</p>
+<ul>
+    <li>Master of Science in Computer Science</li>
+    <li>Focus on C/C++ programming, system architecture, and project-based learning.</li>
+</ul>
+
+<p><strong>Chung-Ang University</strong></p>
+<ul>
+    <li>Exchange Program / Double Degree (Korea)</li>
+</ul>
+
+<h2>💼 Experience</h2>
+
+<p><strong>Waarp</strong> (2024 - 2025)</p>
+<ul>
+    <li><em>Go Developer / Intern</em></li>
+    <li>Contributed to open-source managed file transfer solutions.</li>
+</ul>
+
+<p><strong>Junior Conseil Taker</strong> (2022 - 2025)</p>
+<ul>
+    <li><em>Head of Taker Academy (Nov 2023 - Jan 2025)</em></li>
+    <li><em>Project Manager (Nov 2022 - Oct 2023)</em></li>
+    <li>Managed projects and oversaw the Taker Academy training program.</li>
+</ul>
+
+<p><strong>Acoem France</strong> (Jul 2022 - Dec 2022)</p>
+<ul>
+    <li><em>Digital Asset Management Intern</em></li>
+    <li>Created the automated onboarding system from scratch using GCP tools.</li>
+</ul>
+
+<h2>🛠 Skills</h2>
+
+<ul>
+    <li><strong>Languages:</strong> C, Go, TypeScript, Python, Shell</li>
+    <li><strong>Web:</strong> SvelteKit, Tailwind CSS, HTML/CSS</li>
+    <li><strong>Systems:</strong> Linux, Kernel Development, Docker, Git</li>
+</ul>
+       `
     },
     'projects-folder': { id: 'projects-folder', name: 'projects', type: 'folder', parentId: 'root', children: [] },
     'contact-folder': { id: 'contact-folder', name: 'contact', type: 'folder', parentId: 'root', children: ['github', 'email'] },
