@@ -6,6 +6,7 @@
         closeFile,
         openFile,
     } from "$lib/store";
+    import { File as FileIcon, X } from "lucide-svelte";
 
     let currentOpenFiles = $state($openFiles);
     let currentActiveFileId = $state($activeFileId);
@@ -37,7 +38,10 @@
                 tabindex="0"
                 onclick={() => openFile(fileId)}
             >
-                <span>{file.name}</span>
+                <span class="flex items-center gap-1.5">
+                    <FileIcon size={14} class="text-vscode-blue" />
+                    {file.name}
+                </span>
                 <span
                     class="rounded-md hover:bg-gray-600 p-0.5 opacity-0 group-hover:opacity-100 {currentActiveFileId ===
                     fileId
@@ -47,19 +51,7 @@
                     role="button"
                     tabindex="0"
                 >
-                    <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                    <X size={14} />
                 </span>
             </div>
         {/if}

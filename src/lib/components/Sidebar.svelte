@@ -1,6 +1,14 @@
 <script lang="ts">
     import { files, openFile, type File } from "$lib/store";
     import { slide } from "svelte/transition";
+    import {
+        ChevronRight,
+        ChevronDown,
+        Folder,
+        File as FileIcon,
+        FolderOpen,
+        MoreHorizontal,
+    } from "lucide-svelte";
 
     let fileSystem = $state($files);
 
@@ -36,21 +44,7 @@
     >
         <span>Explorer</span>
         <div class="flex gap-1">
-            <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="cursor-pointer hover:text-white"
-            >
-                <circle cx="12" cy="12" r="1"></circle>
-                <circle cx="19" cy="12" r="1"></circle>
-                <circle cx="5" cy="12" r="1"></circle>
-            </svg>
+            <MoreHorizontal size={16} class="cursor-pointer hover:text-white" />
         </div>
     </div>
 
@@ -68,35 +62,18 @@
                         e.key === "Enter" && handleFileClick(file)}
                 >
                     {#if file.type === "folder"}
-                        <span class="mr-1 w-4 flex justify-center">
+                        <span class="mr-1 flex justify-center items-center w-4">
                             {#if collapsedFolders[file.id]}
-                                <svg
-                                    width="12"
-                                    height="12"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <polyline points="9 18 15 12 9 6"
-                                    ></polyline>
-                                </svg>
+                                <ChevronRight size={16} />
                             {:else}
-                                <svg
-                                    width="12"
-                                    height="12"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <polyline points="6 9 12 15 18 9"
-                                    ></polyline>
-                                </svg>
+                                <ChevronDown size={16} />
+                            {/if}
+                        </span>
+                        <span class="mr-1.5 text-blue-400">
+                            {#if collapsedFolders[file.id]}
+                                <Folder size={16} />
+                            {:else}
+                                <FolderOpen size={16} />
                             {/if}
                         </span>
                         <span class="font-semibold text-xs truncate"
@@ -104,7 +81,9 @@
                         >
                     {:else}
                         <span class="mr-1 w-4"></span>
-                        <!-- Icon based on extension or type -->
+                        <span class="mr-1.5 text-vscode-text">
+                            <FileIcon size={16} />
+                        </span>
                         <span class="truncate">{file.name}</span>
                     {/if}
                 </div>
@@ -129,33 +108,11 @@
             tabindex="0"
             onkeydown={(e) => e.key === "Enter" && toggleFolder("root")}
         >
-            <span class="mr-1 w-4 flex justify-center">
+            <span class="mr-1 flex justify-center items-center w-4">
                 {#if collapsedFolders["root"]}
-                    <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
+                    <ChevronRight size={16} />
                 {:else}
-                    <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <ChevronDown size={16} />
                 {/if}
             </span>
             <span>PORTFOLIO</span>

@@ -89,7 +89,7 @@ const initialFiles: Record<string, File> = {
     },
     'projects-folder': { id: 'projects-folder', name: 'projects', type: 'folder', parentId: 'root', children: [] },
     'contact-folder': { id: 'contact-folder', name: 'contact', type: 'folder', parentId: 'root', children: ['github', 'email'] },
-    'github': { id: 'github', name: 'github.json', type: 'file', parentId: 'contact-folder', content: '{ "url": "https://github.com/baptiste" }' },
+    'github': { id: 'github', name: 'github.json', type: 'file', parentId: 'contact-folder', content: '{ "url": "https://github.com/ZiplEix" }' },
     'email': { id: 'email', name: 'email.txt', type: 'file', parentId: 'contact-folder', content: 'Use the contact form or reach me at my email.' }
 };
 
