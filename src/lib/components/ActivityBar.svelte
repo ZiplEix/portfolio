@@ -4,7 +4,7 @@
     let currentActivity = $state("explorer");
     activeActivity.subscribe((v) => (currentActivity = v));
 
-    function setActivity(activity: "explorer" | "search") {
+    function setActivity(activity: "explorer" | "search" | "git") {
         if (currentActivity === activity && $sidebarVisible) {
             toggleSidebar();
         } else {
@@ -66,7 +66,15 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
     </div>
-    <div class="p-3 opacity-50 cursor-pointer hover:opacity-100">
+    <div
+        class="p-3 border-l-2 cursor-pointer {currentActivity === 'git'
+            ? 'border-vscode-text opacity-100'
+            : 'border-transparent opacity-50 hover:opacity-100'}"
+        onclick={() => setActivity("git")}
+        role="button"
+        tabindex="0"
+        onkeydown={(e) => e.key === "Enter" && setActivity("git")}
+    >
         <!-- Git Icon -->
         <svg
             width="24"
