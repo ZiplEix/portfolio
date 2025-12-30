@@ -3,6 +3,7 @@
 	import ActivityBar from "$lib/components/ActivityBar.svelte";
 	import Sidebar from "$lib/components/Sidebar.svelte";
 	import StatusBar from "$lib/components/StatusBar.svelte";
+	import { onMount } from "svelte";
 	import { sidebarVisible } from "$lib/store";
 
 	let { children } = $props();
@@ -10,6 +11,12 @@
 
 	// Subscribe without $state derived if using store directly inside template isn't preferred or mixed usage
 	sidebarVisible.subscribe((v) => (isSidebarVisible = v));
+
+	onMount(() => {
+		if (window.innerWidth < 1000) {
+			sidebarVisible.set(false);
+		}
+	});
 </script>
 
 <div
